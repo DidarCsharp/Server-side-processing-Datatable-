@@ -1,0 +1,92 @@
+USE [DB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spGetAuthor]    Script Date: 08/10/2020 4:30:52 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create proc [dbo].[spGetAuthor]
+@DisplayLength int,
+@DisplayStart int,
+@SortCol int,
+@SortDir nvarchar(10),
+@Search nvarchar(255) = NULL
+as
+begin
+    Declare @FirstRec int, @LastRec int
+    Set @FirstRec = @DisplayStart;
+    Set @LastRec = @DisplayStart + @DisplayLength;
+   
+    With CTE_Author as
+    (
+         Select ROW_NUMBER() over (order by
+        
+         case when (@SortCol = 0 and @SortDir='asc')
+             then ID
+         end asc,
+         case when (@SortCol = 0 and @SortDir='desc')
+             then ID
+         end desc,
+        
+        case when (@SortCol = 1 and @SortDir='asc')
+             then AuthorName
+        end asc,
+        case when (@SortCol = 1 and @SortDir='desc')
+            then AuthorName
+        end desc,
+
+        case when (@SortCol = 2 and @SortDir='asc')
+            then TotalBook
+        end asc,
+        case when (@SortCol = 2 and @SortDir='desc')
+            then TotalBook
+        end desc,
+
+        case when (@SortCol = 3 and @SortDir='asc')
+            then DateofBirth
+        end asc,
+        case when (@SortCol = 3 and @SortDir='desc')
+            then DateofBirth
+        end desc,
+
+        case when (@SortCol = 4 and @SortDir='asc')
+            then OccupationEN
+        end asc,
+        case when (@SortCol = 4 and @SortDir='desc')
+            then OccupationEN
+        end desc,
+
+		 case when (@SortCol = 5 and @SortDir='asc')
+            then Nationality
+        end asc,
+        case when (@SortCol = 5 and @SortDir='desc')
+            then Nationality
+        end desc
+		
+		)
+         as RowNum,
+         COUNT(*) over() as TotalCount,
+         ID,
+         AuthorName,
+         TotalBook,
+         DateofBirth,
+         OccupationEN,Nationality
+         from  vinv.AuthorInformation
+         where (@Search IS NULL
+                 Or ID like '%' + @Search + '%'
+                 Or AuthorName like '%' + @Search + '%'
+                 Or TotalBook like '%' + @Search + '%'
+                 Or DateofBirth like '%' + @Search + '%'
+                 Or OccupationEN like '%' + @Search + '%'
+				 Or Nationality like '%' + @Search + '%')
+    )
+    Select *
+    from CTE_Author
+    where RowNum > @FirstRec and RowNum <= @LastRec
+end
+GO
+
+
