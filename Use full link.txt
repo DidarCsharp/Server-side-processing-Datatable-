@@ -1,0 +1,8 @@
+https://datatables.net/forums/discussion/41229/get-cell-value-on-button-click
+https://datatables.net/extensions/scroller/examples/initialisation/server-side_processing.html
+https://datatables.net/extensions/scroller/examples/initialisation/large_js_source.html
+https://datatables.net/examples/ajax/null_data_source.html
+https://datatables.net/reference/option/columnDefs
+https://www.google.com/search?rlz=1C1GCEU_enBD871BD871&biw=1920&bih=969&sxsrf=ALeKk01OX7iaZH9gVfJqWZ9yNWSa1ASwTw%3A1602130793325&ei=aZN-X7m3E83yrAHu7r6YCA&q=jquery+datatable+column+properties&oq=jQuery+Datatables+column+p&gs_lcp=CgZwc3ktYWIQAxgAMgkIABDJAxAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BAgAEEc6BAgjECc6BQgAEMkDOgIIADoKCAAQyQMQFBCHAjoHCAAQFBCHAkoFCCASATBKBQgoEgEwULqmE1i4sRNg788TaABwAXgAgAGqAYgB3QaSAQM0LjSYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=psy-ab
+https://www.google.com/search?rlz=1C1GCEU_enBD871BD871&biw=1920&bih=969&sxsrf=ALeKk00W7al8g1QrB0Vrfwz8wbpuYy-UdA:1601895284807&q=server-side+search+in+jquery+datatable+c%23&sa=X&ved=2ahUKEwjH-6v7pJ3sAhXBfn0KHbCDB0IQ1QIoBnoECBEQBw
+https://stackoverflow.com/questions/3531438/jquery-datatables-server-side-processing-using-asp-net-webforms
